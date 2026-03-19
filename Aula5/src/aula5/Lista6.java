@@ -2,7 +2,7 @@ package aula5;
 import java.util.Scanner;
 
 public class Lista6 {
-    public static void main(String[] args) {
+    public static void Lista6 (String[] args) {
         Scanner input = new Scanner(System.in);
         
         int fdp;
