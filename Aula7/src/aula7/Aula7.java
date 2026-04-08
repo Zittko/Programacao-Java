@@ -32,58 +32,47 @@ public class Aula7 {
                     System.out.println("Idade: "+idade);
                     System.out.print("Possível doença: ");
                     if (febre == 1 && tosse == 1 && garganta == 1) {
-                        System.out.println("Gripe");
-                        System.out.println("------------------------------");
+                        System.out.println("Probabilidade alta para gripe");
                         gripe = true;
                     } else if (coriza == 1 && tosse == 1) {
-                        System.out.println("Resfriado");
-                        System.out.println("------------------------------");
+                        System.out.println("Probabilidade alta para resfriado");
                         resf = true;
                     } else if (coriza == 1 && febre == 0) {
-                        System.out.println("Alergia");
-                        System.out.println("------------------------------");
+                        System.out.println("Probabilidade alta para alergia");
                         alergia = true;
                     } else if (faltar == 1) {
-                        System.out.println("Alerta emergencial grave");
-                        System.out.println("------------------------------");
+                        System.out.println("Situação emergencial grave");
                         alert = true;
                     } else {
-                        System.out.println("Não doente ou sintomas não se aplicam no sistema");
-                        System.out.println("------------------------------");
+                        System.out.println("Não doente, está liberado");
                         saud = true;
                     }
+                    System.out.println("------------------------------");
                     break;
                 case 2:
+                    System.out.println("-------- RECOMENDAÇÃO --------");
                     if (gripe == true) {
-                        System.out.println("-------- RECOMENDAÇÃO --------");
                         System.out.println("Recomendação em caso de gripe:");
                         System.out.println("- Procurar um médico");
-                        System.out.println("------------------------------");
                     } else if (resf == true) {
-                        System.out.println("-------- RECOMENDAÇÃO --------");
                         System.out.println("Recomendação em caso de resfriado:");
                         System.out.println("- Tomar um banho quente");
-                        System.out.println("------------------------------");
                     } else if (alergia == true) {
-                        System.out.println("-------- RECOMENDAÇÃO --------");
                         System.out.println("Recomendação em caso de alergia:");
                         System.out.println("- Evitar lugares fechados");
-                        System.out.println("------------------------------");
                     } else if (alert == true) {
-                        System.out.println("-------- RECOMENDAÇÃO --------");
                         System.out.println("Recomendação em caso de alerta:");
                         System.out.println("- Buscar um médico imediatamente");
-                        System.out.println("------------------------------");
                     } else if (saud == true) {
-                        System.out.println("-------- RECOMENDAÇÃO --------");
                         System.out.println("Recomendação em caso de estar saudável:");
                         System.out.println("- Ir para casa e descansar");
-                        System.out.println("------------------------------");
                     } else {
                         System.out.println("ERRO DE SINTAXE");
                     }
+                    System.out.println("------------------------------");
                     break;
                 case 3:
+                    // Início
                     System.out.println("Você está com febre? (1 - Sim/0 - Não)");
                     febre = input.nextInt();
                     System.out.println("Você está com tosse? (1 - Sim/0 - Não)");
@@ -94,6 +83,7 @@ public class Aula7 {
                     coriza = input.nextInt();
                     System.out.println("Você está com falta de ar? (1 - Sim/0 - Não)");
                     faltar = input.nextInt();
+                    // Fim
                     break;
                 case 4:
                     System.out.println("Saindo...");
