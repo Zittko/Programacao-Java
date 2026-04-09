@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 public class Exercicio2 {
     
-    public static void main(String[] args) {
+    public static void exercicio2(String[] args) {
         float n1, n2, soma, sub, mult, div;
         String x = JOptionPane.showInputDialog(null, "Digite o número 1", "", -1);
         n1 = Float.parseFloat(x);
