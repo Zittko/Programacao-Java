@@ -4,13 +4,16 @@ import javax.swing.JOptionPane;
 
 public class Aula8 {
 
-    public static void main(String[] args) {
-        String input = JOptionPane.showInputDialog(null, "Digite o seu nome", "Cadastro de cliente", -1);
-        JOptionPane.showMessageDialog(null, "O nome armazenado é "+input, "Informação", 1);
-        for (int i = 0; i <= 20; i++) {
-            JOptionPane.showMessageDialog(null, "Seu computador ta com viruskkk", "OTARIO KKAKAK", 0);
-        }
-        
+    public static void aula8(String[] args) {
+        float n1, n2 , n3, media;
+        String x = JOptionPane.showInputDialog(null, "Digite a primeira nota", "Notas", -1);
+        n1 = Float.parseFloat(x);
+        String y = JOptionPane.showInputDialog(null, "Digite a segunda nota", "Notas", -1);
+        n2 = Float.parseFloat(y);
+        String z = JOptionPane.showInputDialog(null, "Digite a terceira nota", "Notas", -1);
+        n3 = Float.parseFloat(z);
+        media = (n1 + n2 + n3)/3;
+        JOptionPane.showMessageDialog(null, "A média do aluno é: "+media);
     }
     
 }
