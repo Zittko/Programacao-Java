@@ -11,6 +11,6 @@ package main;
  */
 public class Main {
     public static void main(String[] args) {
-        Exercicios.exe5();
+        Exercicios.exe6();
     }
 }
