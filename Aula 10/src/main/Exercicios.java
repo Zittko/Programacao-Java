@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Arrays;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Exercicios {
@@ -48,16 +50,47 @@ public class Exercicios {
     
     public static void exe3() {
         int[] valor = new int[20];
-        int cont = 0;
+        int ct = 0;
         String show = "";
         for (int c = 0; c < 20; c++) {
             String x = JOptionPane.showInputDialog(null, "Digite o valor "+(c+1));
             valor[c] = Integer.parseInt(x);
             show += valor[c] + " | ";
             if (valor[c] % 2 == 0) {
-                cont ++;
+                ct ++;
             }
         }
-        JOptionPane.showMessageDialog(null, "Números digitados: \n"+show+"\n Números pares contados: "+cont);
+        JOptionPane.showMessageDialog(null, "Números digitados: \n"+show+"\n Números pares contados: "+ct);
+    }
+    public static void exemplo2() {
+        int[] valor = new int[20];
+        Random gen = new Random();
+        String show = "";
+        
+        for (int i = 0; i < 20; i++) {
+            valor[i] = gen.nextInt(100);
+        }
+        Arrays.sort(valor);
+        for (int i = 0; i < 20; i++) {
+            show += valor[i] + " | ";
+        }
+        JOptionPane.showMessageDialog(null, show);
+    }
+    
+    public static void exe4() {
+        int[] valor = new int[10];
+        int ct = 0;
+        String show = "";
+        for (int c = 0; c < 10; c++) {
+            String x = JOptionPane.showInputDialog(null, "Digite o valor "+(c+1));
+            valor[c] = Integer.parseInt(x);
+        }
+        Arrays.sort(valor);
+        for (int c = 0; c < 10; c++) {
+            if (valor[c] % 2 == 0) {
+                show += valor[c] + " | ";
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Números pares: \n"+show);
     }
 }
