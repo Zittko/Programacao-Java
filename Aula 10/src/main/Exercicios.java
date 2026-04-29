@@ -22,7 +22,7 @@ public class Exercicios {
         for (int c = 0; c <= 4; c++) {
             String x = JOptionPane.showInputDialog(null, "Digite o valor "+(c+1));
             valor[c] = Integer.parseInt(x);
-            show += valor[c] + " | ";
+            show += "| " + valor[c] + " |";
         }
         JOptionPane.showMessageDialog(null, show);
     }

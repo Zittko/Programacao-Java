@@ -1,11 +1,11 @@
 package main;
 
-import javax.swing.JOptionPane;
+import View.Inicio_GUI;
 
 public class Main {
-
+    
     public static void main(String[] args) {
-        main.Exercicios.exemplo();
+        new Inicio_GUI().setVisible(true);
     }
     
 }
