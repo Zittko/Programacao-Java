@@ -82,7 +82,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SAIR_BTN);
-        SAIR_BTN.setBounds(300, 250, 73, 23);
+        SAIR_BTN.setBounds(270, 200, 73, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,24 +104,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void SAIR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAIR_BTNActionPerformed
-        // System.exit(0);
-//        String x = JOptionPane.showInputDialog(null, "Deseja realmente sair? \n1 - Sim\n0 - Não");;
-//        int op = Integer.parseInt(x);
-//        if (op == 1) {
-//            System.exit(0);
-//        } else if(op == 0) {
-//            JOptionPane.showMessageDialog(null, "Voltando ao sistema...");
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Opção Inválida");
-//        }
-        int op = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?");
-        if (op == 0) {
-            System.exit(0);
-        } else if(op == 1 || op == 2) {
-            JOptionPane.showMessageDialog(null, "Voltando ao sistema...");
-        } else {
-            JOptionPane.showMessageDialog(null, "Opção Inválida");
-        }
+        Model.Funcoes_DAO.fechar();
     }//GEN-LAST:event_SAIR_BTNActionPerformed
 
     /**
