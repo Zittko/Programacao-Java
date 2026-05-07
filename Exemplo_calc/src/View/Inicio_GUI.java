@@ -31,20 +31,19 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         VALUE1_TXT = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         TIMES_BTN = new javax.swing.JButton();
         MINUS_BTN = new javax.swing.JButton();
         SUM_BTN = new javax.swing.JButton();
         EXIT_BTN = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        VALUE2_TXT = new javax.swing.JTextField();
+        RESULT_TXT = new javax.swing.JTextField();
         DIV_BTN = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         CLEAR_BTN = new javax.swing.JToggleButton();
+        VALUE2_TXT = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -53,30 +52,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel.setBackground(new java.awt.Color(0, 0, 0));
         jPanel.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("NUMBER 1");
-        jPanel.add(jLabel2);
-        jLabel2.setBounds(220, 260, 140, 30);
-
         VALUE1_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jPanel.add(VALUE1_TXT);
-        VALUE1_TXT.setBounds(220, 100, 140, 30);
-
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel.add(jTextField1);
-        jTextField1.setBounds(220, 320, 140, 30);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel.add(jLabel4);
-        jLabel4.setBounds(30, 50, 76, 29);
+        VALUE1_TXT.setBounds(30, 180, 140, 30);
 
         TIMES_BTN.setBackground(new java.awt.Color(0, 204, 204));
         TIMES_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -126,13 +104,14 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("VALOR 2");
+        jLabel3.setText("RESULT");
         jPanel.add(jLabel3);
-        jLabel3.setBounds(220, 160, 140, 30);
+        jLabel3.setBounds(120, 260, 140, 30);
 
-        VALUE2_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
-        jPanel.add(VALUE2_TXT);
-        VALUE2_TXT.setBounds(220, 200, 140, 30);
+        RESULT_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        RESULT_TXT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel.add(RESULT_TXT);
+        RESULT_TXT.setBounds(120, 300, 140, 30);
 
         DIV_BTN.setBackground(new java.awt.Color(0, 204, 204));
         DIV_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -149,9 +128,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("VALOR 1");
+        jLabel1.setText("VALUE 1");
         jPanel.add(jLabel1);
-        jLabel1.setBounds(220, 60, 140, 30);
+        jLabel1.setBounds(30, 140, 140, 30);
 
         jLabel5.setText("jLabel5");
         jPanel.add(jLabel5);
@@ -167,6 +146,18 @@ public class Inicio_GUI extends javax.swing.JFrame {
         });
         jPanel.add(CLEAR_BTN);
         CLEAR_BTN.setBounds(400, 80, 180, 50);
+
+        VALUE2_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        jPanel.add(VALUE2_TXT);
+        VALUE2_TXT.setBounds(210, 180, 140, 30);
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("VALUE 2");
+        jPanel.add(jLabel7);
+        jLabel7.setBounds(210, 140, 140, 30);
 
         getContentPane().add(jPanel);
         jPanel.setBounds(0, 0, 600, 500);
@@ -194,10 +185,6 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void TIMES_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TIMES_BTNActionPerformed
         Model.Funcoes_DAO.mult();
     }//GEN-LAST:event_TIMES_BTNActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void CLEAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEAR_BTNActionPerformed
         Model.Funcoes_DAO.clear();
@@ -243,16 +230,15 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JButton DIV_BTN;
     private javax.swing.JButton EXIT_BTN;
     private javax.swing.JButton MINUS_BTN;
+    public static javax.swing.JTextField RESULT_TXT;
     private javax.swing.JButton SUM_BTN;
     private javax.swing.JButton TIMES_BTN;
     public static javax.swing.JTextField VALUE1_TXT;
     public static javax.swing.JTextField VALUE2_TXT;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

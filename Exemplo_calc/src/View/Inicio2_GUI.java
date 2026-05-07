@@ -30,6 +30,7 @@ public class Inicio2_GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setLayout(null);
 
@@ -45,6 +46,7 @@ public class Inicio2_GUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
