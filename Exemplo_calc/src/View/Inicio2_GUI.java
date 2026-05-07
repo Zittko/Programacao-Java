@@ -28,11 +28,68 @@ public class Inicio2_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        NUMBER1_TXT = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        NUMBER2_TXT = new javax.swing.JTextField();
+        CLEAR_BTN = new javax.swing.JButton();
+        SUM_BTN = new javax.swing.JButton();
+        SUB_BTN = new javax.swing.JButton();
+        MULT_BTN = new javax.swing.JButton();
+        DIV_BTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setBackground(new java.awt.Color(255, 51, 255));
         jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Number 1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(70, 50, 100, 22);
+
+        NUMBER1_TXT.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NUMBER1_TXT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(NUMBER1_TXT);
+        NUMBER1_TXT.setBounds(60, 80, 120, 28);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Number 2");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(70, 130, 100, 22);
+
+        NUMBER2_TXT.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NUMBER2_TXT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(NUMBER2_TXT);
+        NUMBER2_TXT.setBounds(60, 160, 120, 28);
+
+        CLEAR_BTN.setText("Clear");
+        jPanel1.add(CLEAR_BTN);
+        CLEAR_BTN.setBounds(500, 460, 57, 23);
+
+        SUM_BTN.setText("+");
+        jPanel1.add(SUM_BTN);
+        SUM_BTN.setBounds(30, 270, 41, 23);
+
+        SUB_BTN.setText("-");
+        jPanel1.add(SUB_BTN);
+        SUB_BTN.setBounds(180, 270, 37, 23);
+
+        MULT_BTN.setText("X");
+        MULT_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MULT_BTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(MULT_BTN);
+        MULT_BTN.setBounds(330, 270, 39, 23);
+
+        DIV_BTN.setText("/");
+        jPanel1.add(DIV_BTN);
+        DIV_BTN.setBounds(480, 270, 37, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -45,9 +102,13 @@ public class Inicio2_GUI extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(600, 500));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MULT_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MULT_BTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MULT_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,6 +146,15 @@ public class Inicio2_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CLEAR_BTN;
+    private javax.swing.JButton DIV_BTN;
+    private javax.swing.JButton MULT_BTN;
+    public static javax.swing.JTextField NUMBER1_TXT;
+    public static javax.swing.JTextField NUMBER2_TXT;
+    private javax.swing.JButton SUB_BTN;
+    private javax.swing.JButton SUM_BTN;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

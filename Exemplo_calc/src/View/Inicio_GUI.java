@@ -19,6 +19,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
      */
     public Inicio_GUI() {
         initComponents();
+        RESULT_TXT.setVisible(false);
     }
 
     /**
@@ -36,7 +37,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         MINUS_BTN = new javax.swing.JButton();
         SUM_BTN = new javax.swing.JButton();
         EXIT_BTN = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        txtRESULT_TXT = new javax.swing.JLabel();
         RESULT_TXT = new javax.swing.JTextField();
         DIV_BTN = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -44,6 +45,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         CLEAR_BTN = new javax.swing.JToggleButton();
         VALUE2_TXT = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        RESULT2_TXT = new javax.swing.JLabel();
+        PCT_BTN = new javax.swing.JButton();
+        POW_BTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -54,7 +58,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         VALUE1_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jPanel.add(VALUE1_TXT);
-        VALUE1_TXT.setBounds(30, 180, 140, 30);
+        VALUE1_TXT.setBounds(140, 160, 140, 30);
 
         TIMES_BTN.setBackground(new java.awt.Color(0, 204, 204));
         TIMES_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -65,7 +69,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel.add(TIMES_BTN);
-        TIMES_BTN.setBounds(320, 430, 100, 50);
+        TIMES_BTN.setBounds(240, 430, 50, 50);
 
         MINUS_BTN.setBackground(new java.awt.Color(0, 204, 204));
         MINUS_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -76,7 +80,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel.add(MINUS_BTN);
-        MINUS_BTN.setBounds(180, 430, 100, 50);
+        MINUS_BTN.setBounds(140, 430, 50, 50);
 
         SUM_BTN.setBackground(new java.awt.Color(0, 204, 204));
         SUM_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -87,31 +91,33 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel.add(SUM_BTN);
-        SUM_BTN.setBounds(40, 430, 100, 50);
+        SUM_BTN.setBounds(40, 430, 50, 50);
 
         EXIT_BTN.setBackground(new java.awt.Color(0, 204, 204));
         EXIT_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
-        EXIT_BTN.setText("EXIT");
+        EXIT_BTN.setText("X");
         EXIT_BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EXIT_BTNActionPerformed(evt);
             }
         });
         jPanel.add(EXIT_BTN);
-        EXIT_BTN.setBounds(400, 20, 180, 50);
+        EXIT_BTN.setBounds(530, 20, 50, 50);
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("RESULT");
-        jPanel.add(jLabel3);
-        jLabel3.setBounds(120, 260, 140, 30);
+        txtRESULT_TXT.setBackground(new java.awt.Color(255, 255, 255));
+        txtRESULT_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        txtRESULT_TXT.setForeground(new java.awt.Color(255, 255, 255));
+        txtRESULT_TXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtRESULT_TXT.setText("RESULT");
+        jPanel.add(txtRESULT_TXT);
+        txtRESULT_TXT.setBounds(230, 220, 140, 30);
 
         RESULT_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         RESULT_TXT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        RESULT_TXT.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        RESULT_TXT.setFocusable(false);
         jPanel.add(RESULT_TXT);
-        RESULT_TXT.setBounds(120, 300, 140, 30);
+        RESULT_TXT.setBounds(230, 250, 140, 30);
 
         DIV_BTN.setBackground(new java.awt.Color(0, 204, 204));
         DIV_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -122,7 +128,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel.add(DIV_BTN);
-        DIV_BTN.setBounds(460, 430, 100, 50);
+        DIV_BTN.setBounds(320, 430, 50, 50);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -130,7 +136,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("VALUE 1");
         jPanel.add(jLabel1);
-        jLabel1.setBounds(30, 140, 140, 30);
+        jLabel1.setBounds(140, 130, 140, 30);
 
         jLabel5.setText("jLabel5");
         jPanel.add(jLabel5);
@@ -145,11 +151,11 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel.add(CLEAR_BTN);
-        CLEAR_BTN.setBounds(400, 80, 180, 50);
+        CLEAR_BTN.setBounds(210, 350, 180, 50);
 
         VALUE2_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jPanel.add(VALUE2_TXT);
-        VALUE2_TXT.setBounds(210, 180, 140, 30);
+        VALUE2_TXT.setBounds(330, 160, 140, 30);
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
@@ -157,7 +163,35 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("VALUE 2");
         jPanel.add(jLabel7);
-        jLabel7.setBounds(210, 140, 140, 30);
+        jLabel7.setBounds(330, 130, 140, 30);
+
+        RESULT2_TXT.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        RESULT2_TXT.setForeground(new java.awt.Color(255, 255, 255));
+        RESULT2_TXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel.add(RESULT2_TXT);
+        RESULT2_TXT.setBounds(230, 290, 140, 30);
+
+        PCT_BTN.setBackground(new java.awt.Color(0, 204, 204));
+        PCT_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        PCT_BTN.setText("%");
+        PCT_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PCT_BTNActionPerformed(evt);
+            }
+        });
+        jPanel.add(PCT_BTN);
+        PCT_BTN.setBounds(400, 430, 60, 50);
+
+        POW_BTN.setBackground(new java.awt.Color(0, 204, 204));
+        POW_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        POW_BTN.setText("^");
+        POW_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                POW_BTNActionPerformed(evt);
+            }
+        });
+        jPanel.add(POW_BTN);
+        POW_BTN.setBounds(490, 430, 60, 50);
 
         getContentPane().add(jPanel);
         jPanel.setBounds(0, 0, 600, 500);
@@ -189,6 +223,14 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void CLEAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEAR_BTNActionPerformed
         Model.Funcoes_DAO.clear();
     }//GEN-LAST:event_CLEAR_BTNActionPerformed
+
+    private void PCT_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PCT_BTNActionPerformed
+        Model.Funcoes_DAO.pct();
+    }//GEN-LAST:event_PCT_BTNActionPerformed
+
+    private void POW_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_POW_BTNActionPerformed
+        Model.Funcoes_DAO.pow();
+    }//GEN-LAST:event_POW_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,15 +272,18 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JButton DIV_BTN;
     private javax.swing.JButton EXIT_BTN;
     private javax.swing.JButton MINUS_BTN;
+    private javax.swing.JButton PCT_BTN;
+    private javax.swing.JButton POW_BTN;
+    public static javax.swing.JLabel RESULT2_TXT;
     public static javax.swing.JTextField RESULT_TXT;
     private javax.swing.JButton SUM_BTN;
     private javax.swing.JButton TIMES_BTN;
     public static javax.swing.JTextField VALUE1_TXT;
     public static javax.swing.JTextField VALUE2_TXT;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel;
+    private javax.swing.JLabel txtRESULT_TXT;
     // End of variables declaration//GEN-END:variables
 }
