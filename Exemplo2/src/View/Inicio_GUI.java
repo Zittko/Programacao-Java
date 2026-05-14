@@ -18,6 +18,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
      */
     public Inicio_GUI() {
         initComponents();
+        Imagem1.setVisible(false);
     }
 
     /**
@@ -34,7 +35,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         NOME_TXT = new javax.swing.JTextField();
         SAIR_BTN = new javax.swing.JButton();
         MENSAGEM_BTN = new javax.swing.JButton();
-        panelImage2 = new org.edisoncor.gui.panel.PanelImage();
+        Imagem1 = new org.edisoncor.gui.panel.PanelImage();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDayChooser1 = new com.toedter.calendar.JDayChooser();
@@ -82,10 +83,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(MENSAGEM_BTN);
         MENSAGEM_BTN.setBounds(40, 60, 220, 35);
 
-        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/windowsxp.jpeg"))); // NOI18N
-        panelImage2.setLayout(null);
-        jPanel1.add(panelImage2);
-        panelImage2.setBounds(20, 290, 320, 180);
+        Imagem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/windowsxp.jpeg"))); // NOI18N
+        Imagem1.setLayout(null);
+        jPanel1.add(Imagem1);
+        Imagem1.setBounds(20, 290, 320, 180);
         jPanel1.add(jCalendar1);
         jCalendar1.setBounds(280, 110, 250, 153);
         jPanel1.add(jDateChooser1);
@@ -125,9 +126,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SAIR_BTNActionPerformed
 
     private void MENSAGEM_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENSAGEM_BTNActionPerformed
-        //Model.Mensagem_DAO.call();
-        int x = Integer.parseInt(NOME_TXT.getText());
-        JOptionPane.showMessageDialog(null, "O nome digitado foi: "+x);
+        Model.Mensagem_DAO.call();
     }//GEN-LAST:event_MENSAGEM_BTNActionPerformed
 
     /**
@@ -166,6 +165,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static org.edisoncor.gui.panel.PanelImage Imagem1;
     private javax.swing.JButton MENSAGEM_BTN;
     public static javax.swing.JTextField NOME_TXT;
     private javax.swing.JButton SAIR_BTN;
@@ -178,6 +178,5 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private com.toedter.components.JSpinField jSpinField1;
     private com.toedter.calendar.JYearChooser jYearChooser1;
-    private org.edisoncor.gui.panel.PanelImage panelImage2;
     // End of variables declaration//GEN-END:variables
 }

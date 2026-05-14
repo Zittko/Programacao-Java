@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
-import View.Inicio_GUI.*;
+import static View.Inicio_GUI.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
  */
 public class Mensagem_DAO {
     public static void call() {
-        JOptionPane.showMessageDialog(null, "Cadastro de cliente");
+        String x = NOME_TXT.getText();
+        Imagem1.setVisible(true);
+        JOptionPane.showMessageDialog(null, "O nome digitado foi: "+x);
     }
     
     public static void sair() {

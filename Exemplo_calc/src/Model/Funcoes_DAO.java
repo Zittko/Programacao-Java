@@ -54,9 +54,10 @@ public class Funcoes_DAO {
     }
     public static void pow() {
         getText();
-        double number;
-        for (int i = 1; i <= n2; i++) {
-            n1 += n1 * n1;
+        double number, val = 0;
+        
+        for (double i = 1; i <= n2; i++) {
+            val += n1 * n1;
         }
         res = n1;
         showRes();

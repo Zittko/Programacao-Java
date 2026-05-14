@@ -107,12 +107,15 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="org.edisoncor.gui.panel.PanelImage" name="panelImage2">
+        <Container class="org.edisoncor.gui.panel.PanelImage" name="Imagem1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/View/windowsxp.jpeg"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="20" y="290" width="320" height="180"/>
