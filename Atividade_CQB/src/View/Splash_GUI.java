@@ -5,11 +5,6 @@
  */
 package View;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
 /**
  *
  * @author Laboratorio-Info
@@ -23,8 +18,6 @@ public class Splash_GUI extends javax.swing.JFrame {
         initComponents();
         Controller.Splash_DAO.carrega();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,20 +31,25 @@ public class Splash_GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         barra = new javax.swing.JProgressBar();
         MEN_TXT = new javax.swing.JLabel();
+        TITLE = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(null);
-
-        barra.setStringPainted(true);
         jPanel1.add(barra);
-        barra.setBounds(80, 180, 240, 20);
+        barra.setBounds(100, 160, 200, 20);
 
         MEN_TXT.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         MEN_TXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(MEN_TXT);
-        MEN_TXT.setBounds(20, 220, 350, 30);
+        MEN_TXT.setBounds(24, 200, 360, 20);
+
+        TITLE.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        TITLE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TITLE.setText("Cálculo de Quantidade de Blocos");
+        jPanel1.add(TITLE);
+        TITLE.setBounds(0, 0, 400, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,6 +103,7 @@ public class Splash_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel MEN_TXT;
+    private javax.swing.JLabel TITLE;
     public static javax.swing.JProgressBar barra;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

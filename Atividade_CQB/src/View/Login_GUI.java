@@ -5,26 +5,18 @@
  */
 package View;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
 /**
  *
  * @author Laboratorio-Info
  */
-public class Splash_GUI extends javax.swing.JFrame {
+public class Login_GUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Splash_GUI
+     * Creates new form Login_GUI
      */
-    public Splash_GUI() {
+    public Login_GUI() {
         initComponents();
-        Controller.Splash_DAO.carrega();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,22 +28,51 @@ public class Splash_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        barra = new javax.swing.JProgressBar();
-        MEN_TXT = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        LOGIN_TXT = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        SENHA_TXT = new javax.swing.JPasswordField();
+        ACCESS_BTN = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(null);
 
-        barra.setStringPainted(true);
-        jPanel1.add(barra);
-        barra.setBounds(80, 180, 240, 20);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("LOGIN DE USUÁRIO");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 10, 650, 50);
 
-        MEN_TXT.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        MEN_TXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(MEN_TXT);
-        MEN_TXT.setBounds(20, 220, 350, 30);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Usuário");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(190, 140, 250, 30);
+
+        LOGIN_TXT.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.add(LOGIN_TXT);
+        LOGIN_TXT.setBounds(190, 170, 250, 30);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Senha");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(190, 220, 250, 30);
+        jPanel1.add(SENHA_TXT);
+        SENHA_TXT.setBounds(190, 250, 250, 30);
+
+        ACCESS_BTN.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        ACCESS_BTN.setText("ACESSAR");
+        ACCESS_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ACCESS_BTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ACCESS_BTN);
+        ACCESS_BTN.setBounds(190, 310, 250, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,9 +85,13 @@ public class Splash_GUI extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(400, 300));
+        setSize(new java.awt.Dimension(650, 450));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ACCESS_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACCESS_BTNActionPerformed
+        Controller.Verifica_DAO.verifica();
+    }//GEN-LAST:event_ACCESS_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,27 +110,31 @@ public class Splash_GUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Splash_GUI().setVisible(true);
+                new Login_GUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JLabel MEN_TXT;
-    public static javax.swing.JProgressBar barra;
+    private javax.swing.JToggleButton ACCESS_BTN;
+    public static javax.swing.JTextField LOGIN_TXT;
+    public static javax.swing.JPasswordField SENHA_TXT;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
