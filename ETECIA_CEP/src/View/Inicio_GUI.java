@@ -16,6 +16,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
      */
     public Inicio_GUI() {
         initComponents();
+        ok_img.setVisible(false);
+        erro_img.setVisible(false);
     }
 
     /**
@@ -41,6 +43,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         rua_txt = new javax.swing.JTextField();
         SAIR_BTN = new javax.swing.JButton();
+        msg_txt = new javax.swing.JLabel();
+        LIMPAR_BTN = new javax.swing.JButton();
+        erro_img = new javax.swing.JLabel();
+        ok_img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -51,17 +57,19 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         jPanel2.setLayout(null);
 
-        cep_txt.setToolTipText("Clique para pesquisar...");
+        cep_txt.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        cep_txt.setToolTipText("Digite o CEP com traço (1234-090)");
+        cep_txt.setMargin(new java.awt.Insets(2, 20, 2, 2));
         cep_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cep_txtActionPerformed(evt);
             }
         });
         jPanel2.add(cep_txt);
-        cep_txt.setBounds(10, 10, 240, 20);
+        cep_txt.setBounds(20, 10, 150, 40);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 60, 260, 40);
+        jPanel2.setBounds(90, 50, 190, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -69,15 +77,22 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(20, 180, 70, 30);
 
-        PESQUISAR_BTN.setText("PESQUISAR");
+        PESQUISAR_BTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lupa.png"))); // NOI18N
+        PESQUISAR_BTN.setToolTipText("Clique para pesquisar");
+        PESQUISAR_BTN.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        PESQUISAR_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PESQUISAR_BTNActionPerformed(evt);
+            }
+        });
         jPanel1.add(PESQUISAR_BTN);
-        PESQUISAR_BTN.setBounds(340, 60, 100, 40);
+        PESQUISAR_BTN.setBounds(300, 50, 60, 60);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("CEP");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 20, 34, 14);
+        jLabel2.setBounds(90, 20, 190, 14);
         jPanel1.add(bairro_txt);
         bairro_txt.setBounds(90, 180, 360, 30);
 
@@ -116,6 +131,31 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(SAIR_BTN);
         SAIR_BTN.setBounds(730, 10, 50, 50);
 
+        msg_txt.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        msg_txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(msg_txt);
+        msg_txt.setBounds(450, 130, 340, 60);
+
+        LIMPAR_BTN.setText("LIMPAR");
+        LIMPAR_BTN.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        LIMPAR_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LIMPAR_BTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(LIMPAR_BTN);
+        LIMPAR_BTN.setBounds(380, 50, 70, 60);
+
+        erro_img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        erro_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/no.png"))); // NOI18N
+        jPanel1.add(erro_img);
+        erro_img.setBounds(570, 230, 80, 80);
+
+        ok_img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ok_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/ok.png"))); // NOI18N
+        jPanel1.add(ok_img);
+        ok_img.setBounds(570, 230, 80, 80);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,6 +178,21 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void SAIR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAIR_BTNActionPerformed
         System.exit(0);
     }//GEN-LAST:event_SAIR_BTNActionPerformed
+
+    private void PESQUISAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PESQUISAR_BTNActionPerformed
+        Model.Pesquisa_DAO.buscarCep(cep_txt.getText());
+    }//GEN-LAST:event_PESQUISAR_BTNActionPerformed
+
+    private void LIMPAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LIMPAR_BTNActionPerformed
+        cep_txt.setText("");
+        rua_txt.setText("");
+        bairro_txt.setText("");
+        cidade_txt.setText("");
+        estado_txt.setText("");
+        msg_txt.setText("");
+        ok_img.setVisible(false);
+        erro_img.setVisible(false);
+    }//GEN-LAST:event_LIMPAR_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,11 +230,13 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LIMPAR_BTN;
     private javax.swing.JButton PESQUISAR_BTN;
     private javax.swing.JButton SAIR_BTN;
     public static javax.swing.JTextField bairro_txt;
     public static javax.swing.JTextField cep_txt;
     public static javax.swing.JTextField cidade_txt;
+    public static javax.swing.JLabel erro_img;
     public static javax.swing.JTextField estado_txt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -188,6 +245,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public static javax.swing.JLabel msg_txt;
+    public static javax.swing.JLabel ok_img;
     public static javax.swing.JTextField rua_txt;
     // End of variables declaration//GEN-END:variables
 }
