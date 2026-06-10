@@ -32,9 +32,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        telefone_txt = new javax.swing.JTextField();
+        tel_txt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        email_txt = new javax.swing.JTextField();
+        end_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         nome_txt = new javax.swing.JTextField();
         salvar_btn = new javax.swing.JButton();
@@ -54,23 +54,23 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(10, 130, 100, 20);
 
-        telefone_txt.setToolTipText("");
-        telefone_txt.addActionListener(new java.awt.event.ActionListener() {
+        tel_txt.setToolTipText("");
+        tel_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                telefone_txtActionPerformed(evt);
+                tel_txtActionPerformed(evt);
             }
         });
-        jPanel2.add(telefone_txt);
-        telefone_txt.setBounds(120, 130, 170, 20);
+        jPanel2.add(tel_txt);
+        tel_txt.setBounds(120, 130, 170, 20);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Endereço de Email:");
+        jLabel2.setText("Endereço:");
         jPanel2.add(jLabel2);
         jLabel2.setBounds(10, 100, 100, 20);
 
-        email_txt.setToolTipText("");
-        jPanel2.add(email_txt);
-        email_txt.setBounds(120, 100, 170, 20);
+        end_txt.setToolTipText("");
+        jPanel2.add(end_txt);
+        end_txt.setBounds(120, 100, 170, 20);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Nome:");
@@ -153,9 +153,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void telefone_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefone_txtActionPerformed
+    private void tel_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_telefone_txtActionPerformed
+    }//GEN-LAST:event_tel_txtActionPerformed
 
     private void salvar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvar_btnActionPerformed
         Model.funcoes_DAO.salvar();
@@ -201,7 +201,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextField email_txt;
+    public static javax.swing.JTextField end_txt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -214,6 +214,6 @@ public class Inicio_GUI extends javax.swing.JFrame {
     public static javax.swing.JTextField nome_txt;
     private javax.swing.JButton sair_btn;
     private javax.swing.JButton salvar_btn;
-    public static javax.swing.JTextField telefone_txt;
+    public static javax.swing.JTextField tel_txt;
     // End of variables declaration//GEN-END:variables
 }
