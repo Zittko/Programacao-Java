@@ -16,7 +16,7 @@ public class funcoes_DAO {
     public static String end;
     public static long tel;
     
-    public static String url = "jdbc:mysql://localhost/exemplo"; // enderço do BD
+    public static String url = "jdbc:mysql://localhost:3307/Exemplo"; // enderço do BD
     public static String username = "root";        //nome de um usuário de seu BD
     public static String password = "";  // senha do BD
     
@@ -43,7 +43,7 @@ public class funcoes_DAO {
             }
             
             // Recebendo os dados a serem inseridos na tabela
-            String sql = "INSERT INTO cliente(cli_nome,cli_email,cli_tel) values('"+nom+"','"+end+"','"+tel+"')";
+            String sql = "INSERT INTO cliente(cli_nome,cli_end,cli_tel) values('"+nom+"','"+end+"','"+tel+"')";
             
             try { // Tratamento de Erros para inserção
                 
