@@ -93,7 +93,7 @@ public class funcoes_DAO {
 
                 }
                 // Declarando uma string com o comando mySQL para consulta
-                String sql = "SELECT cli_nome,cli_email, cli_tel FROM cliente where cli_cod = "+codigo;
+                String sql = "SELECT cli_nome,cli_end, cli_tel FROM cliente where cli_cod = "+codigo;
                 // Criando variavel que executara o comando da string sql
                 Statement stm = (Statement) con.createStatement();
                 
@@ -112,12 +112,12 @@ public class funcoes_DAO {
                     while (rs.next()) {  // Criando variaveis que receberão os valores do banco de dados 
 
                         String nome = rs.getString("cli_nome");
-                        String email = rs.getString("cli_email");
+                        String end = rs.getString("cli_end");
                         String telefone = rs.getString("cli_tel");
                         i++;
                         //JOptionPane.showMessageDialog(null,"Nome: " + nome + "\nEmail: " +telefone + "\nTelefone: " +telefone, "Resultado",-1);
                         nome1_txt.setText(String.valueOf(nome));
-                        end1_txt.setText(String.valueOf(email));
+                        end1_txt.setText(String.valueOf(end));
                         tel1_txt.setText(String.valueOf(telefone));
                         
                     }
@@ -141,10 +141,8 @@ public class funcoes_DAO {
                 // Conexão com servidor mal sucedida 
                 JOptionPane.showMessageDialog(null,"Erro ao conectar com o servidor","ERRO!",0); 
 
-            } 
-
- 
-
+            }
+            
         }catch(NumberFormatException erro){ 
 
             // Código fora do formato 
@@ -176,9 +174,10 @@ public class funcoes_DAO {
 
         } 
 
-              String sql = "UPDATE cliente SET Cli_nome='"+nom+"',Cli_email='"+end+"',Cli_tel='"+tel+"' WHERE Cli_Cod="+cod1_txt.getText(); 
+              String sql = "UPDATE cliente SET cli_nome='"+nom+"',cli_end='"+end+"',cli_tel='"+tel+"' WHERE cli_cod="+cod1_txt.getText(); 
 
              
+              
 
       
 
@@ -258,6 +257,14 @@ public class funcoes_DAO {
             JOptionPane.showMessageDialog(null,"Digite o código corretamante","ERRO",0);
 
             cod2_txt.setText("");
+        }
+    }
+    
+    public static void backup() {
+        try {
+            Runtime.getRuntime().exec("cmd.exe /c start C:\\Users\\Laboratorio-Info\\Documents\\executa.bat");
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -37,24 +37,18 @@ public class Inicio_GUI extends javax.swing.JFrame {
             Vector columnNames = new Vector(); 
             // AS LINHAS ABAIXO SÃO REFERENTES AOS CAMPOS DA TABELA CLIENTE 
 
-            columnNames.addElement("Código"); 
-
-            columnNames.addElement("Nome"); 
-
-            columnNames.addElement("Endereço"); 
-
-            columnNames.addElement("Telefone"); 
-
-          
-
-            Vector rows = new Vector(); 
-
-            while (rs.next()) { 
-
+            columnNames.addElement("Código");
+            columnNames.addElement("Nome");
+            columnNames.addElement("Endereço");
+            columnNames.addElement("Telefone");
+            Vector rows = new Vector();
+            
+            while (rs.next()) {
+                
                 Vector newRow = new Vector(); 
-
+                
                 for (int i = 1; i <= numberOfColumns; i++) { 
-
+                    
                     newRow.addElement(rs.getObject(i)); 
 
                 } 
@@ -64,16 +58,13 @@ public class Inicio_GUI extends javax.swing.JFrame {
             } 
 
            return new DefaultTableModel(rows, columnNames); 
-
-       } catch (Exception e) { 
-
- 
-
+           
+        } catch (Exception e) {
+           
            return null; 
-
+           
         } 
-
-        }
+    }
     // FIM
     
     // MÉTODO REFRESH INÍCIO
@@ -129,6 +120,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         tel1_txt = new javax.swing.JTextField();
         carrega_btn = new javax.swing.JButton();
         altera_btn = new javax.swing.JButton();
+        backup_btn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         cod2_txt = new javax.swing.JTextField();
@@ -252,7 +244,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel3.add(carrega_btn);
-        carrega_btn.setBounds(240, 160, 140, 30);
+        carrega_btn.setBounds(240, 120, 140, 30);
 
         altera_btn.setText("ALTERAR");
         altera_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -261,7 +253,16 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel3.add(altera_btn);
-        altera_btn.setBounds(240, 200, 140, 30);
+        altera_btn.setBounds(240, 160, 140, 30);
+
+        backup_btn.setText("BACKUP");
+        backup_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backup_btnActionPerformed(evt);
+            }
+        });
+        jPanel3.add(backup_btn);
+        backup_btn.setBounds(240, 200, 140, 30);
 
         jTabbedPane1.addTab("CONSULTAR/ALTERAR", jPanel3);
 
@@ -280,7 +281,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel4.add(cod2_txt);
-        cod2_txt.setBounds(140, 110, 110, 30);
+        cod2_txt.setBounds(160, 110, 70, 30);
 
         excluir_btn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         excluir_btn.setText("Excluir");
@@ -328,6 +329,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
     private void salvar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvar_btnActionPerformed
         Model.funcoes_DAO.salvar();
+        refresh();
     }//GEN-LAST:event_salvar_btnActionPerformed
 
     private void sair_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sair_btnActionPerformed
@@ -352,6 +354,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Opção inválida");
         }
+        refresh();
     }//GEN-LAST:event_excluir_btnActionPerformed
 
     private void carrega_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carrega_btnActionPerformed
@@ -360,7 +363,12 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
     private void altera_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altera_btnActionPerformed
         Model.funcoes_DAO.alterar();
+        refresh();
     }//GEN-LAST:event_altera_btnActionPerformed
+
+    private void backup_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backup_btnActionPerformed
+        Model.funcoes_DAO.backup();
+    }//GEN-LAST:event_backup_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -400,6 +408,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Cliente;
     private javax.swing.JButton altera_btn;
+    private javax.swing.JButton backup_btn;
     private javax.swing.JButton carrega_btn;
     private java.util.List<View.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
